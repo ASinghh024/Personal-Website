@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ankit Singh | Portfolio</title>
+    <meta name="description" content="Ankit Singh - Engineer, Business Enthusiast, and Builder. ECE student passionate about ML, business, and product development.">
+    <meta name="keywords" content="Ankit Singh, Engineer, Machine Learning, Business, Product Development, Portfolio">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E👨‍💻%3C/text%3E%3C/svg%3E">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="#home">Ankit Singh</a>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="#home" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#about" class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#projects" class="nav-link">Projects</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#skills" class="nav-link">Skills</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#experience" class="nav-link">Experience</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#blog" class="nav-link">Blog</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#contact" class="nav-link">Contact</a>
+                </li>
+            </ul>
+            <div class="nav-toggle">
+                <button class="dark-mode-toggle" id="darkModeToggle" aria-label="Toggle dark mode">
+                    <span class="sun-icon">☀️</span>
+                    <span class="moon-icon">🌙</span>
+                </button>
+                <div class="hamburger" id="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title">Hi, I'm Ankit Singh 👋</h1>
+                    <h2 class="hero-subtitle">Engineer | Business Enthusiast | Builder</h2>
+                    <p class="hero-bio">
+                        ECE student passionate about machine learning, business strategy, and product development. 
+                        I love building innovative solutions and exploring the intersection of technology and business.
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="#" class="btn btn-primary" id="downloadResume">Download Resume</a>
+                        <a href="#projects" class="btn btn-secondary">View Projects</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="avatar-placeholder">
+                        <svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="100" cy="100" r="100" fill="var(--accent-color)" opacity="0.1"/>
+                            <circle cx="100" cy="80" r="30" fill="var(--accent-color)" opacity="0.3"/>
+                            <path d="M60 140 Q100 120 140 140 Q140 160 100 160 Q60 160 60 140" fill="var(--accent-color)" opacity="0.3"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>
+                        I'm an Electronics and Communication Engineering student with a passion for technology and business. 
+                        My interests span across machine learning, product development, and strategic business analysis.
+                    </p>
+                    <p>
+                        I believe in the power of technology to solve real-world problems and create meaningful impact. 
+                        Whether it's developing ML models or analyzing market trends, I approach every challenge with curiosity and determination.
+                    </p>
+                </div>
+                <div class="highlights">
+                    <h3>Highlights</h3>
+                    <ul class="highlights-list">
+                        <li>🎯 Top 1% in CAT & JEE examinations</li>
+                        <li>🃏 Top 1% Poker player in India</li>
+                        <li>💼 Internship at CyWreck (Cybersecurity)</li>
+                        <li>🚀 Multiple ML and product development projects</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2 class="section-title">Projects</h2>
+            <div class="project-filters">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="ml">Machine Learning</button>
+                <button class="filter-btn" data-filter="product">Product</button>
+                <button class="filter-btn" data-filter="business">Business</button>
+            </div>
+            <div class="projects-grid">
+                <div class="project-card" data-category="ml">
+                    <h3>Crime Hotspot Prediction</h3>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">ML</span>
+                        <span class="tech-tag">Kaggle</span>
+                    </div>
+                    <p>Developed a machine learning model to predict crime hotspots using historical data and geographical features from Kaggle datasets.</p>
+                    <div class="project-links">
+                        <a href="https://github.com/ASinghh024/crime-prediction-app" class="btn btn-small" target="_blank">GitHub</a>
+                        <a href="#" class="btn btn-small btn-outline">Live Demo</a>
+                    </div>
+                </div>
+                <div class="project-card" data-category="product">
+                    <h3>OutreachX</h3>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Gmail API</span>
+                        <span class="tech-tag">OAuth</span>
+                        <span class="tech-tag">PDF</span>
+                    </div>
+                    <p>Built an automated email system with Gmail API integration, OAuth authentication, and PDF extraction capabilities for bulk communications.</p>
+                    <div class="project-links">
+                        <a href="https://github.com/ASinghh024/OutreachX" class="btn btn-small" target="_blank">GitHub</a>
+                        <a href="https://drive.google.com/file/d/1Nk3RQphG_YtxDOb4ihKnYmpC5LTKlWqy/view?usp=sharing" class="btn btn-small btn-outline" target="_blank">Demo</a>
+                    </div>
+                </div>
+                <div class="project-card" data-category="ml">
+                    <h3>Early Detection of Alzheimer's</h3>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">ML</span>
+                        <span class="tech-tag">Healthcare</span>
+                    </div>
+                    <p>Developed a machine learning model for early detection of Alzheimer's disease using medical imaging and patient data analysis.</p>
+                    <div class="project-links">
+                        <a href="#" class="btn btn-small">GitHub</a>
+                        <a href="#" class="btn btn-small btn-outline">Research Paper</a>
+                    </div>
+                </div>
+                <div class="project-card" data-category="product business">
+                    <h3>Inter-hostel Delivery System</h3>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Product Strategy</span>
+                        <span class="tech-tag">Business Model</span>
+                        <span class="tech-tag">UX Design</span>
+                    </div>
+                    <p>Conceptualized and designed a delivery system for inter-hostel logistics, focusing on user experience and operational efficiency.</p>
+                    <div class="project-links">
+                        <a href="#" class="btn btn-small">Case Study</a>
+                        <a href="#" class="btn btn-small btn-outline">Prototype</a>
+                    </div>
+                </div>
+                <div class="project-card" data-category="product">
+                    <h3>Swey</h3>
+                    <div class="tech-stack">
+                        <span class="tech-tag">React</span>
+                        <span class="tech-tag">UI/UX</span>
+                        <span class="tech-tag">Matching Algorithm</span>
+                    </div>
+                    <p>A platform for matching stylists with users to get personalized styling suggestions, creating seamless connections between fashion experts and clients.</p>
+                    <div class="project-links">
+                        <a href="https://github.com/ASinghh024/StyleSwipe" class="btn btn-small" target="_blank">GitHub</a>
+                        <a href="https://style-swipe-three.vercel.app" class="btn btn-small btn-outline" target="_blank">Live Demo</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <h2 class="section-title">Skills</h2>
+            <div class="skills-content">
+                <div class="skill-category">
+                    <h3>Technical Skills</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">SQL</span>
+                        <span class="skill-tag">Verilog</span>
+                        <span class="skill-tag">VHDL</span>
+                        <span class="skill-tag">Machine Learning</span>
+                        <span class="skill-tag">Data Analysis</span>
+                        <span class="skill-tag">Git</span>
+                        <span class="skill-tag">APIs</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Business & Soft Skills</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Market Research</span>
+                        <span class="skill-tag">Business Models</span>
+                        <span class="skill-tag">Product Strategy</span>
+                        <span class="skill-tag">Strategic Thinking</span>
+                        <span class="skill-tag">Decision Making</span>
+                        <span class="skill-tag">Problem Solving</span>
+                        <span class="skill-tag">Communication</span>
+                        <span class="skill-tag">Leadership</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="experience">
+        <div class="container">
+            <h2 class="section-title">Experience</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <h3>Cybersecurity Intern</h3>
+                        <h4>CyWreck</h4>
+                        <p class="timeline-date">2024</p>
+                        <ul>
+                            <li>Conducted comprehensive market research on cybersecurity trends and emerging threats</li>
+                            <li>Connected with industry investors and stakeholders to understand market dynamics</li>
+                            <li>Explored cutting-edge cybersecurity technologies and their business applications</li>
+                            <li>Contributed to strategic planning and business development initiatives</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <h3>Project Lead</h3>
+                        <h4>Personal Projects</h4>
+                        <p class="timeline-date">2023 - Present</p>
+                        <ul>
+                            <li>Led multiple machine learning and product development projects</li>
+                            <li>Developed end-to-end solutions from ideation to implementation</li>
+                            <li>Collaborated with cross-functional teams on various initiatives</li>
+                            <li>Mentored junior developers and shared knowledge through documentation</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section id="blog" class="blog">
+        <div class="container">
+            <h2 class="section-title">Thoughts & Insights</h2>
+            <div class="blog-grid">
+                <article class="blog-card">
+                    <h3>Quick Commerce Revolution in India</h3>
+                    <p class="blog-preview">
+                        Exploring how quick commerce is reshaping the Indian retail landscape and the key factors driving its explosive growth...
+                    </p>
+                    <div class="blog-meta">
+                        <span class="blog-date">Coming Soon</span>
+                        <a href="#" class="blog-link">Read More</a>
+                    </div>
+                </article>
+                <article class="blog-card">
+                    <h3>Business Models in the Digital Age</h3>
+                    <p class="blog-preview">
+                        An analysis of how traditional business models are evolving in response to digital transformation and changing consumer behavior...
+                    </p>
+                    <div class="blog-meta">
+                        <span class="blog-date">Coming Soon</span>
+                        <a href="#" class="blog-link">Read More</a>
+                    </div>
+                </article>
+                <article class="blog-card">
+                    <h3>Machine Learning in Practice</h3>
+                    <p class="blog-preview">
+                        Lessons learned from implementing ML solutions in real-world scenarios and the challenges of moving from theory to practice...
+                    </p>
+                    <div class="blog-meta">
+                        <span class="blog-date">Coming Soon</span>
+                        <a href="#" class="blog-link">Read More</a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <p>I'm always open to discussing new opportunities, interesting projects, or just having a chat about technology and business.</p>
+                    <div class="contact-links">
+                        <a href="mailto:ankitsingh.dtu.32@gmail.com" class="contact-link">
+                            <span class="contact-icon">📧</span>
+                            ankitsingh.dtu.32@gmail.com
+                        </a>
+                        <a href="https://www.linkedin.com/in/ankit-singh-a94845351" class="contact-link" target="_blank">
+                            <span class="contact-icon">💼</span>
+                            LinkedIn
+                        </a>
+                        <a href="https://github.com/ASinghh024" class="contact-link" target="_blank">
+                            <span class="contact-icon">💻</span>
+                            GitHub
+                        </a>
+                    </div>
+                    <a href="#" class="btn btn-primary" id="downloadResumeFooter">Download Resume</a>
+                </div>
+                <form class="contact-form" id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2025 Ankit Singh. All rights reserved.</p>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/ankit-singh-a94845351" target="_blank" aria-label="LinkedIn">💼</a>
+                    <a href="https://github.com/ASinghh024" target="_blank" aria-label="GitHub">💻</a>
+                    <a href="mailto:ankitsingh.dtu.32@gmail.com" aria-label="Email">📧</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Apple-style Floating Elements -->
+    <div class="floating-elements">
+        <!-- Scroll to Top Button -->
+        <button id="scrollToTop" class="floating-btn scroll-to-top" aria-label="Scroll to top">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <path d="M10 4L10 16M10 4L6 8M10 4L14 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </button>
+        
+        <!-- Quick Contact Button -->
+        <button class="floating-btn quick-contact" aria-label="Quick contact">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <path d="M18 13V16C18 16.5304 17.7893 17.0391 17.4142 17.4142C17.0391 17.7893 16.5304 18 16 18H4C3.46957 18 2.96086 17.7893 2.58579 17.4142C2.21071 17.0391 2 16.5304 2 16V4C2 3.46957 2.21071 2.96086 2.58579 2.58579C2.96086 2.21071 3.46957 2 4 2H7L9 5H16C16.5304 5 17.0391 5.21071 17.4142 5.58579C17.7893 5.96086 18 6.46957 18 7V13Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </button>
+        
+        <!-- Theme Toggle (Floating) -->
+        <button class="floating-btn theme-toggle-floating" aria-label="Toggle theme">
+            <svg class="sun-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <circle cx="10" cy="10" r="4" stroke="currentColor" stroke-width="2"/>
+                <path d="M10 2V4M10 16V18M18 10H16M4 10H2M15.314 4.686L13.9 6.1M6.1 13.9L4.686 15.314M15.314 15.314L13.9 13.9M6.1 6.1L4.686 4.686" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+            <svg class="moon-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" style="display: none;">
+                <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
