@@ -335,34 +335,6 @@ p {
 .nav-toggle {
     display: flex;
     align-items: center;
-    gap: 1rem;
-}
-
-.dark-mode-toggle {
-    background: none;
-    border: none;
-    font-size: 1.2rem;
-    cursor: pointer;
-    padding: 0.5rem;
-    border-radius: 0.5rem;
-    transition: background-color 0.3s ease;
-}
-
-.dark-mode-toggle:hover {
-    background: var(--secondary-bg);
-}
-
-[data-theme="dark"] .sun-icon {
-    display: none;
-}
-
-[data-theme="light"] .moon-icon,
-:root .moon-icon {
-    display: none;
-}
-
-[data-theme="dark"] .moon-icon {
-    display: inline;
 }
 
 .hamburger {

@@ -239,28 +239,13 @@ function initializeNavigation() {
     updateActiveNavLink();
 }
 
-// Dark mode functionality
+// Dark mode functionality (removed navbar toggle, only floating toggle remains)
 function initializeDarkMode() {
-    const darkModeToggle = document.getElementById('darkModeToggle');
     const html = document.documentElement;
 
     // Check for saved theme preference or default to light mode
     const savedTheme = localStorage.getItem('theme') || 'light';
     html.setAttribute('data-theme', savedTheme);
-
-    darkModeToggle.addEventListener('click', function() {
-        const currentTheme = html.getAttribute('data-theme');
-        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-        
-        html.setAttribute('data-theme', newTheme);
-        localStorage.setItem('theme', newTheme);
-        
-        // Add transition class for smooth theme change
-        html.style.transition = 'background-color 0.3s ease, color 0.3s ease';
-        setTimeout(() => {
-            html.style.transition = '';
-        }, 300);
-    });
 }
 
 // Project filtering functionality
@@ -331,15 +316,8 @@ function initializeContactForm() {
         }, 2000);
     });
 
-    // Resume download functionality
-    downloadResumeButtons.forEach(button => {
-        button.addEventListener('click', function(e) {
-            e.preventDefault();
-            showNotification('Resume download will be available soon!', 'info');
-            // In a real implementation, this would trigger a file download
-            // window.open('/path/to/resume.pdf', '_blank');
-        });
-    });
+    // Resume download functionality - buttons now have direct links
+    // No need for event listeners as buttons link directly to Google Drive
 }
 
 // Scroll effects and animations
