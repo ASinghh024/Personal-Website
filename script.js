@@ -282,7 +282,9 @@ function initializeContactForm() {
     const downloadResumeButtons = document.querySelectorAll('#downloadResume, #downloadResumeFooter');
 
     // Contact form submission with Formspree integration
-    contactForm.addEventListener('submit', function(e) {
+    contactForm.addEventListener('submit', async function(e) {
+        e.preventDefault();
+        
         const formData = new FormData(this);
         const name = formData.get('name');
         const email = formData.get('email');
@@ -290,13 +292,11 @@ function initializeContactForm() {
         
         // Basic form validation
         if (!name || !email || !message) {
-            e.preventDefault();
             showNotification('Please fill in all fields.', 'error');
             return;
         }
         
         if (!isValidEmail(email)) {
-            e.preventDefault();
             showNotification('Please enter a valid email address.', 'error');
             return;
         }
@@ -305,15 +305,39 @@ function initializeContactForm() {
         const submitButton = this.querySelector('button[type="submit"]');
         const originalText = submitButton.textContent;
         
+        console.log('Original button text:', originalText);
         submitButton.textContent = 'Sending...';
         submitButton.disabled = true;
         
-        // Form will submit naturally to Formspree
-        // Reset button state after a delay in case of errors
-        setTimeout(() => {
+        try {
+            // Submit to Formspree
+            const response = await fetch('https://formspree.io/f/xeozbaaj', {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            });
+            
+            if (response.ok) {
+                showNotification('✅ Thanks for reaching out! I\'ll get back to you soon.', 'success');
+                console.log('Form submitted successfully');
+                // Reset form after restoring button state
+                setTimeout(() => {
+                    contactForm.reset();
+                }, 100);
+            } else {
+                throw new Error('Form submission failed');
+            }
+        } catch (error) {
+            console.error('Form submission error:', error);
+            showNotification('❌ Oops! Something went wrong. Please try again.', 'error');
+        } finally {
+            console.log('Resetting button text to:', originalText);
             submitButton.textContent = originalText;
             submitButton.disabled = false;
-        }, 3000);
+            console.log('Button text after reset:', submitButton.textContent);
+        }
     });
 
     // Resume download functionality - buttons now have direct links
@@ -677,33 +701,8 @@ function initializeLoadingAnimations() {
         return overlay;
     }
     
-    // Add loading to form submissions
-    const contactForm = document.querySelector('#contact form');
-    if (contactForm) {
-        contactForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            
-            const submitBtn = contactForm.querySelector('button[type="submit"]');
-            const originalText = submitBtn.textContent;
-            
-            // Add spinner to button
-            submitBtn.innerHTML = '<span class="loading-spinner"></span>Sending...';
-            submitBtn.disabled = true;
-            
-            // Simulate form submission
-            setTimeout(() => {
-                submitBtn.innerHTML = '✓ Sent!';
-                submitBtn.style.background = 'var(--success-color, #34C759)';
-                
-                setTimeout(() => {
-                    submitBtn.innerHTML = originalText;
-                    submitBtn.disabled = false;
-                    submitBtn.style.background = '';
-                    contactForm.reset();
-                }, 2000);
-            }, 2000);
-        });
-    }
+    // Contact form loading is now handled in initializeContactForm()
+    // Removed duplicate event listener to prevent conflicts
     
     // Add skeleton loading to project cards on scroll
     const projectCards = document.querySelectorAll('.project-card');
