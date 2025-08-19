@@ -281,10 +281,8 @@ function initializeContactForm() {
     const contactForm = document.getElementById('contactForm');
     const downloadResumeButtons = document.querySelectorAll('#downloadResume, #downloadResumeFooter');
 
-    // Contact form submission
+    // Contact form submission with Formspree integration
     contactForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        
         const formData = new FormData(this);
         const name = formData.get('name');
         const email = formData.get('email');
@@ -292,28 +290,30 @@ function initializeContactForm() {
         
         // Basic form validation
         if (!name || !email || !message) {
+            e.preventDefault();
             showNotification('Please fill in all fields.', 'error');
             return;
         }
         
         if (!isValidEmail(email)) {
+            e.preventDefault();
             showNotification('Please enter a valid email address.', 'error');
             return;
         }
         
-        // Simulate form submission
+        // Show sending state
         const submitButton = this.querySelector('button[type="submit"]');
         const originalText = submitButton.textContent;
         
         submitButton.textContent = 'Sending...';
         submitButton.disabled = true;
         
+        // Form will submit naturally to Formspree
+        // Reset button state after a delay in case of errors
         setTimeout(() => {
-            showNotification('Thank you for your message! I\'ll get back to you soon.', 'success');
-            contactForm.reset();
             submitButton.textContent = originalText;
             submitButton.disabled = false;
-        }, 2000);
+        }, 3000);
     });
 
     // Resume download functionality - buttons now have direct links
