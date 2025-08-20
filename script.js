@@ -167,13 +167,10 @@ function initializeNavigation() {
     // Navbar background on scroll
     function updateNavbarBackground() {
         if (window.scrollY > 50) {
-            navbar.style.background = getComputedStyle(document.documentElement).getPropertyValue('--primary-bg');
+            navbar.style.background = getComputedStyle(document.documentElement).getPropertyValue('--glass-bg');
             navbar.style.boxShadow = 'var(--shadow-medium)';
         } else {
-            navbar.style.background = 'rgba(255, 255, 255, 0.95)';
-            if (document.documentElement.getAttribute('data-theme') === 'dark') {
-                navbar.style.background = 'rgba(15, 23, 42, 0.95)';
-            }
+            navbar.style.background = getComputedStyle(document.documentElement).getPropertyValue('--glass-bg');
             navbar.style.boxShadow = 'none';
         }
     }
